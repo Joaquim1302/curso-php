@@ -166,10 +166,11 @@ class EasyPDO
         try {
 
             $command = $this->connection->prepare($query);
+
             if ($parameters != null) {
-                $command->execute($parameters);
+               $command->execute($parameters);
             } else {
-                $command->execute();
+               $command->execute();
             }
         } catch (\PDOException $e) {
             $this->affectedRows = 0;
