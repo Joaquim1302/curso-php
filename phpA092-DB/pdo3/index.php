@@ -1,14 +1,17 @@
  <?php
- 
- require_once('../lib/EasyPDO.php');
 
-/// namespace\class
+require_once('../lib/EasyPDO.php');
+require_once('./config.php');
 
 use EasyPDO\EasyPDO;
 
-$gestor = new EasyPDO();
-
-$clientes = $gestor->select('SELECT * FROM clientes;');
+$dbLoja = new EasyPDO(MYSQL_1);
+$dbTeste = new EasyPDO(MYSQL_2);
+$clientesLoja = $dbLoja->select('SELECT * FROM clientes;');
+$clientesTeste = $dbTeste->select('SELECT * FROM clientes;');
 
 echo '<pre>';
-print_r($clientes);
+print_r($clientesLoja);
+echo '<hr>';
+echo '<pre>';
+print_r($clientesTeste);

@@ -12,8 +12,9 @@ if(isset($_POST['nome'])){
     );
     
     // para evitar SQL Injection
-    $sqlCmd  = $sqlDB->prepare("INSERT INTO clientes VALUES(0, ?)"); //péssimo para tabela com vários campos VALUES(0, ?,?,?,...,?)
-    $sqlCmd->execute([$nome]);
+    //$sqlCmd  = $sqlDB->prepare("INSERT INTO clientes VALUES(0, ?)"); //péssimo para tabela com vários campos VALUES(0, ?,?,?,...,?)
+    //$sqlCmd->execute([$nome]);
+
     // melhor:
     $sqlCmd  = $sqlDB->prepare("INSERT INTO clientes VALUES(0, :nome)");
     $sqlCmd->execute(

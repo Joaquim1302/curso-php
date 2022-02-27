@@ -22,9 +22,9 @@ class EasyPDO
     // CONNETION PROPERTIES
     // ------------------------------------------------------------------------
     private $db_host = 'localhost';
-    private $db_name = 'loja';
-    private $db_user = 'joaquimGitHUB';
-    private $db_pass = 'joaquim1234';
+    private $db_name = '';
+    private $db_user = '';
+    private $db_pass = '';
     private $db_char = 'utf8';
 
     // ------------------------------------------------------------------------
