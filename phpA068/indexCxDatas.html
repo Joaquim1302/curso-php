@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="submit/tratarData.php" method="post">
+        <!-- NÃO É SUPORTADO PELO SAFARI E IE -->
+        
+        <label>Data de nascimento</label><br>
+        <input type="date" name="dataNascimento">
+        <hr> 
+        
+        <label>Hora</label><br>
+        <input type="time" name="hora">
+        <hr> 
+        
+        <label>Mês</label><br>
+        <input type="month" name="mes">
+        <hr> 
+        
+        <label>Semana</label><br>
+        <input type="week" name="semana">
+        <hr> 
+        
+        <label>Data e hora</label><br>
+        <input type="datetime-local" name="dataHora">
+        <hr> 
+        <br>
+        <input type="submit" value="Aceitar">
+        
+    </form>
+
+</body>
+</html>
