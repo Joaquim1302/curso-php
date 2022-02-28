@@ -22,4 +22,11 @@ function aesEncript($valor)
 
 }
  
-114 11:50
+function aesDecript($hash){
+    // verifira a validade da hash
+    if(strlen($hash) % 2 != 0){
+        return -1;
+    }
+
+    return openssl_decrypt(hex2bin($hash), 'aes-256-cbc', AES_KEY, OPENSSL_RAW_DATA, AES_IV);
+}

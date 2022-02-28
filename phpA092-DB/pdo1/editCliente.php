@@ -4,15 +4,16 @@ if(!isset($_GET['id'])) {
     die('Id inválido');     
 } else {
     $id = $_GET['id'];
-}    
+}  
 
-// le base de dados
 require_once('../lib/EasyPDO.php');
 require_once('./config.php');
-
 // echo  "<pre>";
 // print_r(MYSQL_1);
 
+$id = aesDecript($id);
+
+// le base de dados
 $db = new EasyPDO\EasyPDO(MYSQL_1);
 $cliente = $db->select("SELECT * FROM clientes WHERE id_cliente=:id", [':id' => $id])[0];
 //  echo  "<pre>";
