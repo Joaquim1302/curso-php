@@ -31,6 +31,7 @@ $clientes = $dados->fetchAll(PDO::FETCH_ASSOC);
         <thead>
             <th>id_cliente</th>
             <th>nome</th>
+            <th></th>
         </thead>
         <tbody>
             <?php foreach ($clientes as $cliente) : ?>
@@ -38,6 +39,7 @@ $clientes = $dados->fetchAll(PDO::FETCH_ASSOC);
                 <tr>
                     <td><?= $cliente['id_cliente'] ?></td>
                     <td><?= $cliente['nome'] ?></td>
+                    <td><a href="editCliente.php?id=<?= $cliente['id_cliente']?>">Editar cliente</a></td>
                 </tr>
 
             <?php endforeach; ?>
@@ -47,6 +49,7 @@ $clientes = $dados->fetchAll(PDO::FETCH_ASSOC);
     <p>Total de clientes: <strong><?= count($clientes) ?></strong></p>
 
     <a href="addCliente.html">Adicionar novo cliente</a>  
+
 </body>
 
 </html>
