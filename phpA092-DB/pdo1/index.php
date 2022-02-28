@@ -39,7 +39,7 @@ $clientes = $dados->fetchAll(PDO::FETCH_ASSOC);
                 <tr>
                     <td><?= $cliente['id_cliente'] ?></td>
                     <td><?= $cliente['nome'] ?></td>
-                    <td><a href="editCliente.php?id=<?= $cliente['id_cliente']?>">Editar cliente</a></td>
+                    <td><a href="editCliente.php?id=<?= aesEncript($cliente['id_cliente']) ?>">Editar cliente</a></td>
                 </tr>
 
             <?php endforeach; ?>
