@@ -15,8 +15,8 @@ require_once('./config.php');
 
 $db = new EasyPDO\EasyPDO(MYSQL_1);
 $cliente = $db->select("SELECT * FROM clientes WHERE id_cliente=:id", [':id' => $id])[0];
-// echo  "<pre>";
-// print_r($cliente);
+//  echo  "<pre>";
+//  print_r($cliente);
 
 ?>
 
@@ -29,8 +29,10 @@ $cliente = $db->select("SELECT * FROM clientes WHERE id_cliente=:id", [':id' => 
     <title>Document</title>
 </head>
 <body>
+
     <form action="editClienteSubmit.php" method="post">
-        <input type="hidden" name="id_contato">
+        
+        <input type="hidden" name="id_cliente" value="<?= $cliente['id_cliente'] ?>">
         <p><input type="text" name="nome" maxlenght="50" value=<?= $cliente['nome'] ?>></p>
         <p><input type="submit" name="Salvar" value="Salvar"></p>  
 
